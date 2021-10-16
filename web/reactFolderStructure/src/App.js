@@ -1,7 +1,7 @@
 import React from 'react';
-import AppRouter from './Routes/AppRouter';
-import AppStoreContainer from './Store/AppStoreContainer';
-import AppContextProvider from './Store/AppStore';
+import AppRouter from './App/Routes/AppRouter';
+import AppStoreContainer from './App/Store/AppStoreContainer';
+import AppContextProvider from './App/Store/AppStore';
 
 /**
  * Recebe recebe quem deve ler os dados da store: Component. Mid-Level-Component
