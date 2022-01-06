@@ -1,0 +1,32 @@
+function getTime(UNIX_timestamp) {
+    var d = new Date(Number(UNIX_timestamp));
+    var offset = -d.getTimezoneOffset() / 60;
+    d.setHours(d.getHours() - 2);
+    var b = new Date(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), d.getUTCHours(), d.getUTCMinutes(), d.getUTCSeconds());
+    if (offset >= 0) {
+        b.setHours(b.getHours() + Number(offset));
+    } else {
+        b.setHours(b.getHours() - (Math.abs(Number(offset))));
+    }
+    var hour = b.getHours();
+    var min = b.getMinutes() < 10 ? '0' + b.getMinutes() : b.getMinutes();
+    return hour + ':' + min;
+}
+
+function getDate(UNIX_timestamp) {
+    var d = new Date(Number(UNIX_timestamp));
+    var offset = -d.getTimezoneOffset() / 60;
+    d.setHours(d.getHours() - 2);
+    var b = new Date(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), d.getUTCHours(), d.getUTCMinutes(), d.getUTCSeconds());
+    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    if (offset >= 0) {
+        b.setHours(b.getHours() + Number(offset));
+    } else {
+        b.setHours(b.getHours() - (Math.abs(Number(offset))));
+    }
+    var yyyy = b.getFullYear();
+    var mm = months[b.getMonth()];
+    var dd = b.getDate();
+    var time = dd + ' ' + mm + ' ' + yyyy;
+    return time;
+}
