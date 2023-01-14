@@ -1,0 +1,7 @@
+*.css
+*.svg
+dist
+build
+vite.config.ts
+*.d.ts
+node_modules
